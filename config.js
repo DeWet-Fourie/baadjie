@@ -3,7 +3,7 @@ window.BAADJIE_CONFIG = {
   SHEET_CSV_URL: "",
 
   // Format: South African WhatsApp number without +, spaces, or brackets.
-  WHATSAPP_NUMBER: "27000000000",
+  WHATSAPP_NUMBER: "27792820388",
 
   BRAND_EMAIL: "hello@baadjie.co.za"
 };
