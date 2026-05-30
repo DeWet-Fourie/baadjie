@@ -209,3 +209,35 @@ function renderProducts() {
 }
 
 loadProducts();
+const modal = document.createElement("div");
+modal.className = "product-modal";
+modal.innerHTML = `
+  <button class="product-modal-close">close</button>
+  <img src="" alt="Expanded product image">
+`;
+document.body.appendChild(modal);
+
+const modalImg = modal.querySelector("img");
+const modalClose = modal.querySelector(".product-modal-close");
+
+document.addEventListener("click", event => {
+  const image = event.target.closest(".product-image img");
+
+  if (!image) return;
+
+  modalImg.src = image.src;
+  modalImg.alt = image.alt || "baadjie product";
+  modal.classList.add("is-open");
+});
+
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("is-open");
+  modalImg.src = "";
+});
+
+modal.addEventListener("click", event => {
+  if (event.target === modal) {
+    modal.classList.remove("is-open");
+    modalImg.src = "";
+  }
+});
