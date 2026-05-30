@@ -241,3 +241,43 @@ modal.addEventListener("click", event => {
     modalImg.src = "";
   }
 });
+const modal = document.createElement("div");
+modal.className = "product-modal";
+modal.innerHTML = `
+  <button class="product-modal-close" type="button">close</button>
+  <img src="" alt="Expanded product image">
+`;
+
+document.body.appendChild(modal);
+
+const modalImg = modal.querySelector("img");
+const closeBtn = modal.querySelector(".product-modal-close");
+
+function openProductModal(image){
+  modalImg.src = image.src;
+  modalImg.alt = image.alt || "baadjie product";
+  modal.classList.add("is-open");
+  document.body.classList.add("modal-open");
+}
+
+function closeProductModal(){
+  modal.classList.remove("is-open");
+  document.body.classList.remove("modal-open");
+  modalImg.src = "";
+}
+
+document.addEventListener("click", event => {
+  const image = event.target.closest(".product-image img");
+  if (image) openProductModal(image);
+
+  if (
+    event.target === modal ||
+    event.target === closeBtn
+  ) {
+    closeProductModal();
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeProductModal();
+});
