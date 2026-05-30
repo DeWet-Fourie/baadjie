@@ -1,7 +1,7 @@
 const SHEET_CSV_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSKmI-Y-b_a4v8VbeJrNpAQjdsMoZfxKXCCLbvW92GhLzTlJQxQjS8htJ-W5df4n-cSO_jY3Yh_QgUD/pub?gid=0&single=true&output=csv";
 
-const WHATSAPP_NUMBER = "27000000000";
+const WHATSAPP_NUMBER = "27792820388";
 
 const grid = document.querySelector(".product-grid");
 const statusText = document.querySelector(".product-status");
